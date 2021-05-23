@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minden ami repülés</title>
+    <link rel="stylesheet" href="stílus.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <div id="feher" class="container h-100">
+        <img src="kepek/repulogep.jpg" alt="repülőgép mint fogalom" title="repülőgép mint fogalom" class="card-img-top">
+    </div>
+    <article class="container h-100">
+        <nav id="betu" class="navbar navbar-expand-lg bg-warning my-1">
+            <h1 class="nav-link text-dark font-weight-bold">Repülőgépekre időpontfoglalás</h1>
+        </nav>
+
+        <div>
+            <label for="frankfurt">Frankfurt</label>
+            <input type="checkbox" name="" onclick="szamol()" id="frankfurt">
+            <label for="stockholm">Stockholm</label>
+            <input type="checkbox" name="" onclick="szamol()" id="stockholm">
+            <label for="parizs">Párizs</label>
+            <input type="checkbox" name="" onclick="szamol()" id="parizs">
+            <label for="doha">Doha</label>
+            <input type="checkbox" name="" onclick="szamol()" id="doha">
+
+        </div>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #007bff;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "30px Arial";
+            ctx.strokeText("Jó utazást !", 10, 50);
+            ctx.lineTo(200, 100);
+            ctx.stroke();
+        </script>
+        <br>
+        <nav class="navbar navbar-expand-lg bg-warning my-1">
+            <header class="navbar-nav">
+                <label for="nev">Név:</label>
+                <input type="text" name="" id="nev">
+                <label for="email">Email-cím:</label>
+                <input id="email" type="text">
+                <label for="idopont">Időpont:</label>
+                <input type="number" id="idopont">
+                <button onclick="szamol()">REGISZTRACIO</button>
+                <br>
+                <div id="kimenet"></div>
+            </header>
+        </nav>
+        </div>
+        <script>
+            function szamol() {
+                var nev = document.getElementById("nev").value;
+                var email = document.getElementById("email").value;
+                var idopont = document.getElementById("idopont").value;
+                var ki = document.getElementById("kimenet");
+                ki.innerHTML = "";
+                if (idopont <= 23) {
+                    ki.innerHTML += "<p class='sikeres'>Sikeres regisztráció</p>" + "<br>";
+                }
+                if (idopont > 23) {
+                    ki.innerHTML += "<p class='sikertelen'>Sikertelen regisztáció</p>" + "<br>";
+                }
+                if (nev == 0) {
+                    ki.innerHTML += "Nem adta meg a nevét!" + "<br>";
+                }
+                if (email == 0) {
+                    ki.innerHTML += "Nem adta meg az Email-t!" + "<br";
+                }
+                if (idopont == 0) {
+                    ki.innerHTML += "Nem adta meg az időpontot!" + "<br>";
+                }
+                if (frankfurt.checked) {
+                    ki.innerHTML += "Lufthansa LH1343-al lesz az utazás" + "<br>";
+                }
+                if (stockholm.checked) {
+                    ki.innerHTML += "Wizz Air W62403-al lesz az utazás" + "<br>";
+                }
+                if (parizs.checked) {
+                    ki.innerHTML += "Air France AF1495-el lesz az utazás" + "<br>";
+                }
+                if (doha.checked) {
+                    ki.innerHTML += "Qatar Airways QR200-al lesz az utazás" + "<br>";
+                }
+            }
+
+        </script>
+        <br>
+        <br>
+        <h1 id="idopontfoglalo">Repülőgépek melyekre lehet időpontot foglalni</h1>
+        <h2>A repülőgép mint fogalom, bevezető rész:</h2>
+        <div id="kornybaratrepulo" class="nav-link text-dark font-weight-bold">
+            <img src="kepek/elsorepulok.jpg" alt="első repülőgép" title="első repülőgép" class="card-img-top">
+        </div>
+        <p>A repülőgép a levegőnél nehezebb olyan közlekedési eszköz, mely a légkörben halad, merev felületei és a
+            levegő
+            reakcióerejéből keletkező felhajtóerő segítségével a repülési magasság és irány megváltoztatására, illetve
+            megtartására képes motor vagy hajtómű segítségével.</p>
+        <p>A repülőgépmotor, vagy repülőgéphajtómű olyan hőerőgép, amelyet a repülőgépek működéséhez szükséges vonó-,
+            illetve tolóerő – helikopterek esetében a felhajtóerőt is beleértve – előállítására alkalmaznak.</p>
+
+        <h2>Az oldalon található időpontfoglaláshoz tartozó légivállalatok:</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 p-2">
+                <div class="p-3 h-100 szall">
+                    <h3>Lufthansa</h3>
+                    <p>A mai légitársaságot <strong>1953. január 6-án</strong> alapították Kölnben és <strong>1955.
+                            április 1-jén</strong> kezdte meg a
+                        rendszeres
+                        közlekedést. A névhasználati jogot és a darumadarat ábrázoló emblémát, valamint zászlót
+                        <strong>1954-ben</strong>
+                        30
+                        000
+                        márkáért
+                        vásárolták meg, a Lufthansa ugyanis nem jogutódja a Harmadik Birodalom <strong>1945-ben</strong>
+                        megszüntetett,
+                        azonos
+                        nevű
+                        légitársaságának.A Lufthansa (németül: Deutsche Lufthansa AG) a hivatalos német nemzeti
+                        légitársaság,
+                        Európa
+                        legnagyobb légitársasága. Székhelye Kölnben található. Bázisai a Frankfurti repülőtér, továbbá
+                        München,
+                        Düsseldorf és Zürich városaiban találhatóak. Alapító tagja az <strong>1997-ben</strong> alakult
+                        Star Alliance
+                        nevű,
+                        légitársaságokat tömörítő szövetségnek. A Lufthansa Groupnak jelenleg több mint 117 000
+                        alkalmazottja
+                        van
+                        világszerte.
+                    </p>
+                    <div class="card" style="width: 90%;margin:auto">
+                        <img class="card-img-top" src="kepek/lufthansa.jpg" alt="Lufthansa" title="Lufthansa">
+                        <div id="feher" class="card-body">
+                            <svg class="card-img-top" id="nemet" width="300" height="200">
+                                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                                    style="fill:yellow;stroke:red;stroke-width:5;fill-rule:evenodd;" />
+                            </svg>
+                            <p class="card-text text-center font-weight-bold">Lufthansa</p>
+                        </div>
+
+                    </div>
+                    <div id="feher" class="card" style="width: 90%;margin:auto">
+                        <img class="card-img-top" src="kepek/lefthansa-reptér.jpg" alt="Lufthansa-reptér"
+                            title="Lufthansa-reptér">
+                        <div id="feher" class="card-body">
+                            <p class="card-text text-center font-weight-bold">Lufthansa-reptér</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 p-2">
+                <div class="p-3 h-100 szall">
+                    <h3>Wizz Air</h3>
+                    <p> A Wizz Airt <strong>2003 júniusában</strong>
+                        alapította
+                        hat,
+                        légitársasági,
+                        illetve más iparágakban tapasztalatot szerzett szakember, az egykor a Malévet irányító
+                        <strong>Váradi
+                            József</strong>
+                        vezérigazgató vezetésével. A légitársaság célja, hogy olcsó utakat biztosítson
+                        Kelet-Közép-Európa és
+                        Nyugat-Európa között. A Wizz Air Hungary Légiközlekedési Zrt. egy magyarországi székhelyű
+                        diszkont
+                        légitársaság,
+                        melynek
+                        tulajdonosa
+                        a Jersey szigeten bejegyzett Wizz Air Holdings. Központi irodája Budapesten található,
+                        míg
+                        cégközpontja
+                        üzleti
+                        megfontolásból Genfben.Az 1650 milliárd forint piaci értékű vállalat <strong>2019. szeptemberi
+                            adat</strong>
+                        121
+                        repülőgépével 13
+                        ország 28 bázisáról üzemeltet járatokat. Több mint 500 útvonalon, 44 ország 145
+                        célállomására
+                        repülnek
+                        gépeikkel, és több mint 3000 embert foglalkoztatnak. A fő pénzügyi befektető a közlekedési
+                        beruházásokra
+                        specializálódott
+                        amerikai
+                        Indigo
+                        Partners társaság volt. Alig három hónappal később, Londonban bejegyezték a Wizz Airt,
+                        és
+                        készen
+                        állt a
+                        repülésre. Az első járat <strong>2004. május 19-én</strong> szállt fel Katowicéből.
+                        A légitársaság <strong>2006 októberében</strong> ötmilliomodik , <strong>2008
+                            februárjába</strong> n pedig már
+                        tízmilliomodik
+                        utasát
+                        szállította.
+                        <strong>2010-es</strong> árbevétele alapján a Figyelő listáján a 42. legnagyobb magyarországi
+                        vállalat
+                        volt.
+                        A Malév <strong>2012-es</strong> csődje után felmerült, hogy a Wizz Air lehetne az új nemzeti
+                        légitársaság,
+                        ám
+                        ezt a
+                        címet
+                        végül egyik cég sem kapta meg.
+                        <strong>2013-ban</strong> a Magyarországon és Lengyelországban is elnyerte a legkiválóbb márkák
+                        elismeréséül
+                        szolgáló
+                        Superbrands
+                        díjat. És azóta is kivállóan működik világszerte mindenhol.
+                    </p>
+                    <div id="feher" class="card" style="width: 90%;margin:auto">
+                        <img class="card-img-top" src="kepek/wizz air.jpg" alt="Föld-Hold rendszer" title="Wizz Air">
+                        <svg class="card-img-top" id="magyar" width="300" height="200">
+                            <polygon points="100,10 40,198 190,78 10,78 160,198"
+                                style="fill:green;stroke:white;stroke-width:5;fill-rule:evenodd;" />
+                        </svg>
+                        <div id="feher" class="card-body">
+                            <p class="card-text text-center font-weight-bold">Wizz Air</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 p-2">
+                <div class="p-3 h-100 szall">
+                    <h3>Air France</h3>
+                    <p> Az Air France <strong>1933. október 7-én</strong> alakult meg az Air Orient, az Air Union, a
+                        Compagnie
+                        Générale
+                        Aéropostale, a Compagnie Internationale de Navigation Aérienne (CIDNA) és a Société Générale
+                        de
+                        Transport
+                        Aérien
+                        (SGTA) összeolvadásával. Ez utóbbi volt az első francia légitársaság, amelyet még
+                        <strong>1919-ben</strong>
+                        Lignes
+                        Aériennes
+                        Farman néven alapítottak.
+                        Az Air France a világ egyik legnagyobb légitársasága, az Air France-KLM csoport egyik
+                        leányvállalata, a
+                        SkyTeam
+                        légitársaság-szövetség egyik alapító tagja. Globális bázisrepülőtere a Párizs-Charles de
+                        Gaulle
+                        repülőtér, a
+                        másodlagos központja pedig a Párizs–Orly repülőtér, a Lyon–Saint-Exupéry repülőtér és a
+                        Nizza
+                        Côte
+                        d’Azur
+                        repülőtér. Az Air France alapító tagjai az alapítás évére már összetett
+                        hálózattal
+                        rendelkeztek
+                        Európában, a francia gyarmatokon, Észak-Afrikában és más egyéb területeken.
+                    </p>
+                    <div id="feher" class="card" style="width: 90%;margin:auto">
+                        <img class="card-img-top" src="kepek/air-france.jpg" alt="Air France" title="Air France">
+                        <svg class="logo" height="130" width="500">
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:darkblue;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:red;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad2)" />
+                            <text fill="#ffffff" font-size="25" font-family="Verdana" x="50" y="86">Air France</text>
+                        </svg>
+                        <div id="feher" class="card-body">
+                            <p class="card-text text-center font-weight-bold">Air France</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 p-2">
+                <div class="p-3 h-100 szall">
+                    <h3>Qatar Airways</h3>
+                    <p>
+                        A Qatar Airways leányvállalatot <strong>1993. november 22-én</strong> alapították. Működését
+                        <strong>1994.
+                            január
+                            20-án</strong>
+                        kezdte
+                        meg a
+                        Kuwait Airways légitársaságtól bérelt Boeing 767–200ER gépein. A légitársaság
+                        eredetileg
+                        Katar
+                        Állam
+                        királyi
+                        család privát tagjainak tulajdonát képezte. <strong>1997-ben</strong> új menedzser csapat
+                        irányítása
+                        alatt
+                        indították
+                        újra. A
+                        Qatar Airways Katar állam légitársasága, központja Dohában található. A folyamatosan
+                        terjeszkedő
+                        nemzetközi
+                        légitársaság több mint 120 célállomása (beleértve a teherszállítást) Európa, Afrika,
+                        Közép-
+                        és
+                        Dél-Ázsia,
+                        Észak- és Dél-Amerika, Közel- és Távol-Kelet számos pontján megtalálható. Flottája <strong>2013
+                            augusztusában</strong>
+
+                        118
+                        repülőgépet tartalmaz. Alkalmazottjainak száma meghaladja a 150 000-et, ami kb. 100
+                        különböző
+                        nemzet
+                        állampolgáraiból tevődik
+                        össze. Ezen kívül 5000-en dolgoznak a légitársaság leányvállalatainál.
+                    </p>
+                    <div id="feher" class="card" style="width: 90%;margin:auto">
+                        <img class="card-img-top" src="kepek/qatar.jpg" alt="Qatar Airways" title="Qatar Airways">
+                        <svg id="logo" height="130" width="500">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                            <text fill="#ffffff" font-size="18" font-family="Verdana" x="50" y="86">Qatar Airways</text>
+                        </svg>
+                        <div id="feher" class="card-body">
+                            <p class="card-text text-center font-weight-bold">Qatar Airways</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4>Hivatkozás ami alapján készítettem az oldalamon a rajzokat és logókat:</h4>
+        <div class="text-center p-2 mt-1 bg-warning">
+            <p class="navbar-nav" id="hivatkozz">
+            <p class="nav-item">
+                <a href="https://www.w3schools.com/about/about_copyright.asp" target="_blank"
+                    class="nav-link text-dark font-weight-bold">Rajzok és logók
+                </a>
+            </p>
+            </p>
+        </div>
+        </div>
+        <footer>
+            <h4>A hivatkozások amik alapján készítettem a weboldalamat és így ezeken változást is hajtottam végre az
+                oldalamon:</h4>
+            <nav class="navbar navbar-expand-lg bg-warning my-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="https://hu.wikipedia.org/wiki/Lufthansa"
+                            class="nav-link text-dark font-weight-bold">Luftansa wikipédia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://hu.wikipedia.org/wiki/Wizz_Air" target="_blank"
+                            class="nav-link text-dark font-weight-bold">Wizz Air wikipédia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://hu.wikipedia.org/wiki/Air_France"
+                            class="nav-link text-dark font-weight-bold">Air France wikipédia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://hu.wikipedia.org/wiki/Qatar_Airways" target="_blank"
+                            class="nav-link text-dark font-weight-bold">Qatar Airways wikipédia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkambui%2F25668945833&psig=AOvVaw2pRni3ejNIBrLZ0JOc2XWc&ust=1621801815386000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCNiZkfCQ3vACFQAAAAAdAAAAABAwF"
+                            target="_blank" class="nav-link text-dark font-weight-bold">Lufthansa-kép</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fhu%2Fphotos%2Flufthansa-rep%25C3%25BCl%25C5%2591g%25C3%25A9p-corona-v%25C3%25A1ls%25C3%25A1g-5163709%2F&psig=AOvVaw2Fiv7GSebmVEDH4OrSGn4F&ust=1621804969122000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCNjT-76c3vACFQAAAAAdAAAAABAl"
+                            target="_blank" class="nav-link text-dark font-weight-bold">Lufthansa-reptér</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2F130639318%40N03%2F33314754000%2F&psig=AOvVaw193zvZqzZv5yxaoCLwwqBo&ust=1621802571074000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCLjx9saT3vACFQAAAAAdAAAAABAD"
+                            target="_blank" class="nav-link text-dark font-weight-bold">Wizz Air-kép</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AAir_France_Boeing_777-200ER_F-GSPP.jpg&psig=AOvVaw1iQgzBlP-hMNg8zMiAjaZr&ust=1621802892615000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJi-5OeU3vACFQAAAAAdAAAAABAM"
+                            target="_blank" class="nav-link text-dark font-weight-bold">Air France-kép</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AAirbus_A330-243F_%25E2%2580%2598A7-AFJ%25E2%2580%2599_Qatar_Airways_Cargo_(31999272526).jpg&psig=AOvVaw1nTGrmdaBu_LX553G_lYIX&ust=1621803187076000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCIDm2fKV3vACFQAAAAAdAAAAABAf"
+                            target="_blank" class="nav-link text-dark font-weight-bold">Qatar-Airways-kép</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fhu%2Fphotos%2Frep%25C3%25BCl%25C5%2591g%25C3%25A9p-boeing-rep%25C3%25BCl%25C5%2591-4547248%2F&psig=AOvVaw1NftHyusFBeSsJ2O8_SJdK&ust=1621803431634000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCKCDhp6a3vACFQAAAAAdAAAAABAD"
+                            target="_blank" class="nav-link text-dark font-weight-bold">Boeing-repülőgép</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AB%25C3%25A1nhidy-Lampich_iskolarep%25C3%25BCl%25C5%2591g%25C3%25A9p_fortepan_132545.jpg&psig=AOvVaw3yxucvD3mx4vCA8mUauaJU&ust=1621804014115000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCNDSi_mY3vACFQAAAAAdAAAAABAK"
+                            target="_blank" class="nav-link text-dark font-weight-bold">Bánhidy Lampich
+                            iskolarepülőgép</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </article>
+</body>
+
+</html>
+</body>
+
+</html>

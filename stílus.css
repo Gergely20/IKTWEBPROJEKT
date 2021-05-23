@@ -1,0 +1,104 @@
+article{
+    background-color: deeppink;
+}
+div{
+    background-color: deeppink;
+}
+#kozep {
+    text-align: right;
+    background-color: rgba(255, 166, 0, 0.12)
+}
+canvas {
+    background-color: orange;
+    color: mediumturquoise;
+}
+h3 {
+    font-size: 3.7rem;
+    text-align: center;
+    color: rgb(128, 47, 0);
+}
+.szall {
+    border: 6px dashed rgb(255, 192, 234);
+    background-color: lime;
+}
+strong {
+    color: red;
+    background-color: rgba(255, 217, 0, 0.651);
+    font-size: 1.1rem;
+    font-style: italic;
+    font-family: cursive
+}
+label {
+    padding: 5px;
+    text-transform: capitalize;
+}
+h2 {
+    color: aquamarine;
+    border-right: 10px dotted magenta;
+    border-left: 5px solid powderblue;
+}
+#idopontfoglalo{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: large;
+}
+#kornybaratrepulo{
+    background-color: gold;
+    border: 2px solid darkgrey;
+}
+a:hover{
+    background-color: cyan;
+    margin-top: 12px;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul{ 
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input{
+    background-color: darkred;
+    color: white;
+    padding: 5px;
+}
+button{
+    padding: 5px;
+}
+label{
+    color: black;
+}
+h4{
+    text-indent: 20px;
+    letter-spacing: 3px;
+    font-family: monospace;
+}
+#nemet{
+    background-color: black;
+}
+#francia{
+    background-color: blue;
+}
+#magyar{
+    background-color: red;
+}
+
+.sikeres{
+    color: yellow;
+}
+.sikertelen{
+    color: rgba(0, 0, 0, 0.911);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#hivatkozz{
+    text-align: center;
+}
+#feher{
+    background-color: white;
+}
+.vilagos{
+    background-color: white;
+}
+
+
+
